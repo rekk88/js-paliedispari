@@ -18,6 +18,8 @@ function pariDispari(){
     var sceltaUtente;
     var numeroUtente;
     var numeroPC = rand1_5(); //genero un numero random 0 < x < 6
+    var somma=0;
+
     console.log(numeroPC);
     //input utente
     do{
@@ -29,9 +31,21 @@ function pariDispari(){
         console.log(numeroUtente);
     }
     while(numeroUtente < 1 || numeroUtente > 5);
-
+    somma = numeroPC + numeroUtente;
     //verifica pari / dispari
-
+    if(sceltaUtente == "pari" && somma % 2 == 0){
+        console.log("L'utente vince");
+        console.log(somma);
+    }
+    else if(sceltaUtente == "dispari" && somma % 2 != 0){
+            console.log("L'utente vince");
+            console.log(somma);
+         }
+         else //tolti gli unici due casi in cui l'utente vince rimangono solo quelli in cui vince il PC
+         {
+            console.log("Il PC vince");
+            console.log(somma);
+         }
 }
 
 
